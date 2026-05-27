@@ -1,0 +1,29 @@
+name: hello world testing
+on: workflow_dispatch  ## To run this job with manually ####
+jobs:
+  hello:  ## job name ##
+    runs-on: ubuntu-latest ## Runs in lastest supported image ##
+    steps:
+      - name: Print hello word
+        run: echo "Hello you are started the github actions course"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: hello   ## Once hello job done then build job starts execute ##
+    steps:
+    - name: Build the application
+      run: echo "Building the application"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Testing the application
+      run: echo "Testing the application"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+    - name: Deploy the application
+      run: echo "Deploy the application"
