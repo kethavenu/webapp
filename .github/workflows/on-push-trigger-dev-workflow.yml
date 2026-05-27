@@ -1,4 +1,4 @@
-name: on-push-trigger-workflow
+name: on-push-trigger-dev-branch-workflow
 on: 
   push:
     branches:
