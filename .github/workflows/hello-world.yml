@@ -1,0 +1,9 @@
+name: hello world testing
+on: workflow_dispatch  ## To run this job with manually ####
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Print hello word
+        run: echo "Hello you are started the github actions course"
