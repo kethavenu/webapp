@@ -6,3 +6,17 @@ jobs:
     steps:
     - name: On push trigger
       run: echo "On push trigger"
+
+---
+
+name: on-push-trigger-workflow
+on: 
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: On push trigger
+      run: echo "On push trigger"
