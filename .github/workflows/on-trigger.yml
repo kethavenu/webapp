@@ -1,0 +1,8 @@
+name: on-push-trigger-workflow
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: On push trigger
+      run: echo "On push trigger"
