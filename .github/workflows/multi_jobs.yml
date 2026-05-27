@@ -1,4 +1,4 @@
-name: hello world testing
+name: MultiJob script
 on: workflow_dispatch  ## To run this job with manually ####
 jobs:
   hello:  ## job name ##
