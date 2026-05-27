@@ -6,4 +6,4 @@ jobs:
     steps:
 
       - name: Print hello word
-        run: echo "Hello you are started the github actions course"
+        run: echo "Hello ${{ vars.MY_NAME }} you are started the github actions course"
