@@ -1,9 +1,23 @@
 name: on-push-trigger-workflow
-on: push
+on: 
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: On push trigger
       run: echo "On push trigger"
+  
+  access_variable_secret:
+  runs-on: ubuntu-latest
+  if: github.event_name == 'push'
+  steps:
+  - name: print the repository variable
+    run: echo "Printing the repository variable {{ vars.MY_NAME }}"
+  
+  - name: print the secret
+    run: echo "Printing the secret {{ secrets.MY_PASSWORD }}"
+  
 
