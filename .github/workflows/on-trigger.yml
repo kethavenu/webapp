@@ -15,9 +15,9 @@ jobs:
     if: github.event_name == 'push'
     steps:
     - name: print the repository variable
-      run: echo "Printing the repository variable {{ vars.MY_NAME }}"
+      run: echo "Printing the repository variable ${{ vars.MY_NAME }}"
     
     - name: print the secret
-      run: echo "Printing the secret {{ secrets.MY_PASSWORD }}"
+      run: echo "Printing the secret ${{ secrets.MY_PASSWORD }}"
   
 
