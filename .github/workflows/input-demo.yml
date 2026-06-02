@@ -1,0 +1,14 @@
+name: input demo
+on: 
+    workflow_dispatch:
+        inputs:
+            env:
+                description: Choose the values
+                required: true
+                default: dev
+jobs:
+    input-demo:
+        runs-on: ubuntu-latest
+        steps:
+        - name: print the input value
+          run: "echo printing the input value ${{ inputs.env }}"
