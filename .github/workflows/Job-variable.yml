@@ -8,7 +8,7 @@ jobs:
         steps:
             - name: setting the variable
               id: step1
-              run: echo "password=${{ vars.MY_PASSWORD }}" >> $GITHUB_OUTPUTS
+              run: echo "password=$vars.MY_PASSWORD" >> $GITHUB_OUTPUTS
             
             - name: printing the vars
               run: echo ${{ steps.step1.outputs.password }}
