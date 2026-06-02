@@ -1,0 +1,14 @@
+name: Environment variables
+on: workflow_dispatch
+env:
+    APP_ENV: dev
+jobs:
+  env-demo:
+    env:
+      APP_ENV: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing the env variables
+        env:
+          APP_ENV: prod
+        run: "echo connecting to the $APP_ENV"
