@@ -1,0 +1,21 @@
+name: Job variables
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        outputs:
+            my_password: ${{ steps.step1.outputs.password }}
+        steps:
+            - name: setting the variable
+              id: step1
+              run: echo "password=${{ vars.MY_PASSWORD }}" >> $GITHUB_OUTPUTS
+            
+            - name: printing the vars
+              run: echo ${{ steps.step1.outputs.password }}
+    
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name: printing the job variable
+              run: echo ${{ needs.build.outputs.my_password }}
