@@ -5,7 +5,15 @@ on:
             env:
                 description: Choose the values
                 required: true
+                type: choice
                 default: dev
+                options:
+                    - dev
+                    - test
+                    - prod
+            tag:
+                description: which tag you want to install
+                required: true
 jobs:
     input-demo:
         runs-on: ubuntu-latest
