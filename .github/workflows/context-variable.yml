@@ -1,0 +1,9 @@
+name: context variable
+on: push
+jobs:
+    Context-variable:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print context variables
+              run: |
+                echo ${{ github.repository }} is own by ${{ github.actor }}
