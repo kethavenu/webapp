@@ -1,0 +1,16 @@
+name: Deploy the application
+on: 
+    push:
+        branches:
+            - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout the repo
+              run: actions/checkout@v4
+            
+            - name: run the docker file
+              run: |
+                docker build -t kethavenu6032/regapp:v1 hello-world/Dockerfile
+            
