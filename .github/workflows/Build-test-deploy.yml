@@ -14,3 +14,12 @@ jobs:
               run: |
                 docker build -t kethavenu6032/regapp:v1 -f ./hello-world/Dockerfile ./hello-world
             
+            - name: login to the docker repo
+              uses: docker/login-action@v2
+              with:
+                username: ${{ vars.DOCKER_USERNAME }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
+
+            - name: push the images to the repository
+              run: |
+                docker push kethavenu6032/regapp:v1
