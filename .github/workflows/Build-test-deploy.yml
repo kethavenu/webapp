@@ -12,5 +12,5 @@ jobs:
             
             - name: run the docker file
               run: |
-                docker build -t kethavenu6032/regapp:v1 -f ./hello-world/Dockerfile
+                docker build -t kethavenu6032/regapp:v1 -f ./hello-world/Dockerfile ./hello-world
             
