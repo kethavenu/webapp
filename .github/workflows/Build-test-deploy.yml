@@ -28,3 +28,4 @@ jobs:
             - name: push the images to the repository
               run: |
                 docker push kethavenu6032/regapp:v1
+                
