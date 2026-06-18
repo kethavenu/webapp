@@ -28,7 +28,7 @@ jobs:
             - name: Build and create the war file with maven package
               run: |
                 cd ./hello-world
-                mvn clean package
+                mvn clean package -DfinalName=regapp
             
             - name: run the docker file
               run: |
