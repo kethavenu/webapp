@@ -15,7 +15,12 @@ jobs:
               with:
                 java-version: '11'
                 distribution: 'temurin'
-
+            
+            - name: Set up Maven
+              uses: stCarolas/setup-maven@v4.5
+              with:
+                maven-version: 3.8.1
+                
             - name: Build and create the war file with maven package
               run: |
                 cd ./hello-world
