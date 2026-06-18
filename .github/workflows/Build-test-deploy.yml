@@ -20,11 +20,15 @@ jobs:
               uses: stCarolas/setup-maven@v4.5
               with:
                 maven-version: 3.8.1
-                
+            
+            - name: check version of the maven
+              run: |
+                mvn --version
+
             - name: Build and create the war file with maven package
               run: |
                 cd ./hello-world
-                maven clean package
+                mvn clean package
             
             - name: run the docker file
               run: |
